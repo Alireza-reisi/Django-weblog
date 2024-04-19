@@ -28,6 +28,9 @@ TemplateMo 551 Stand Blog
 https://templatemo.com/tm-551-stand-blog
 
 -->
+
+{# fontawesome cdn:  #}
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
@@ -69,7 +72,50 @@ https://templatemo.com/tm-551-stand-blog
               <li class="nav-item">
                 <a class="nav-link" href="/contact-us">Contact Us</a>
               </li>
+
+
+
+{#            ----------------------------------------#}
+              {% if request.user.is_authenticated %}
+              	<li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="/account/login/" id="navbarDropdown" role="button" data-toggle="dropdown">
+                      <i class="fas fa fa-user mx-1"></i>
+                      Profile
+                  </a>
+                    <!-- Dropdown menu -->
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li>
+                            <a class="dropdown-item" href="/account/profile/">My account</a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="/account/logout/">Log out</a>
+                        </li>
+                    </ul>
+                </li>
+
+              {% else %}
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+                      <i class="fas fa fa-user mx-1"></i>
+                      Login
+                    </a>
+                    <!-- Dropdown menu -->
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li>
+                            <a class="dropdown-item" href="/account/signup/">Create account</a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="/account/login/">Log in</a>
+                        </li>
+                    </ul>
+                  </li>
+
+              {% endif %}
+
             </ul>
+
           </div>
         </div>
       </nav>
