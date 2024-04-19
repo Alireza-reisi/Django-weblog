@@ -78,7 +78,7 @@ https://templatemo.com/tm-551-stand-blog
 {#            ----------------------------------------#}
               {% if request.user.is_authenticated %}
               	<li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="/account/login/" id="navbarDropdown" role="button" data-toggle="dropdown">
+                  <a class="nav-link dropdown-toggle" href="{% url 'account:login' %}" id="navbarDropdown" role="button" data-toggle="dropdown">
                       <i class="fas fa fa-user mx-1"></i>
                       Profile
                   </a>
@@ -89,7 +89,7 @@ https://templatemo.com/tm-551-stand-blog
                         </li>
 
                         <li>
-                            <a class="dropdown-item" href="/account/logout/">Log out</a>
+                            <a class="dropdown-item" href="{% url 'account:logout' %}">Log out</a>
                         </li>
                     </ul>
                 </li>
@@ -103,11 +103,11 @@ https://templatemo.com/tm-551-stand-blog
                     <!-- Dropdown menu -->
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li>
-                            <a class="dropdown-item" href="/account/signup/">Create account</a>
+                            <a class="dropdown-item" href="{% url 'account:signup' %}">Create account</a>
                         </li>
 
                         <li>
-                            <a class="dropdown-item" href="/account/login/">Log in</a>
+                            <a class="dropdown-item" href="{% url 'account:login' %}">Log in</a>
                         </li>
                     </ul>
                   </li>
