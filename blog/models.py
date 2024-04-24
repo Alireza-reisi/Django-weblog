@@ -11,6 +11,7 @@ class Category(models.Model):
 
 
 class article(models.Model):
+    POST = None
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
     content = models.TextField()
