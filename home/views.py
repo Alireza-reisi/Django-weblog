@@ -6,5 +6,5 @@ from blog.models import article
 
 
 def home(request):
-    articles = article.objects.all()
+    articles = article.objects.filter(published=True)
     return render(request, 'index.html', context={'articles': articles})

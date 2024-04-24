@@ -5,13 +5,13 @@ TemplateMo 551 Stand Blog
 https://templatemo.com/tm-551-stand-blog
 
 */
-
 body {
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 p {
 	margin-bottom: 0px;
