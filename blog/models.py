@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 class Category(models.Model):
@@ -20,6 +21,9 @@ class article(models.Model):
     Update_date = models.DateTimeField(auto_now=True)
     published = models.BooleanField(default=False)
     categories = models.ManyToManyField(Category, null=True)
+
+    def get_absolute_url(self):
+        return reverse("blog:post", kwargs={"title": self.title})
 
     def __str__(self):
         return self.title

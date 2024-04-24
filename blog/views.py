@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from . import models
 # Create your views here.
 
 
-def post_detail(request, title):
-    article = models.article.objects.get(title=title)
+def article_detail(request, title):
+    article = get_object_or_404(models.article, title=title)
     return render(request, 'article-details.html', context={'article': article})

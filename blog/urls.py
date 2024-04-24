@@ -4,5 +4,5 @@ from . import views
 
 app_name = 'blog'
 urlpatterns = [
-    path('<str:title>', views.post_detail, name='post'),
+    path('<str:title>', views.article_detail, name='post'),
 ]
